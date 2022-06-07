@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>{{ messeage }}</h1>
+
+    <!--
+    <p>id　　　：{{ id }}</p>
+    <p>タイトル：test</p>
+    <p>日付　　：2022/04/01</p>
+    <p>開始時刻：0:00</p>
+    <p>終了時刻：0:00</p>
+    -->
+    
+    <table>
+        <tr>
+            <td>タイトル</td>
+            <td>：</td>
+            <td>{{ post.title }}</td>
+        </tr>
+        <tr>
+            <td>日付</td>
+            <td>：</td>
+            <td>{{ post.date }}</td>
+        </tr>
+        <tr>
+            <td>開始時刻</td>
+            <td>：</td>
+            <td>{{ post.starttime }}</td>
+        </tr>
+        <tr>
+            <td>終了時刻</td>
+            <td>：</td>
+            <td>{{ post.endtime }}</td>
+        </tr>
+    </table><br>
+
+    <table>
+        <tr>
+            <td>内容</td>
+            <td>：</td>
+            <td>{{ post.content }}</td>
+        </tr>
+    </table>
+
+    <p>
+        <a href="/home"> 戻る </a> | 
+        <a href="/edit/{{ post.id }}"> 編集 </a> | 
+        <a href="/delete/{{ post.id }}"> 削除 </a> | 
+    </p>
+{% endblock %}

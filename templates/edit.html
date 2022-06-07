@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>{{ messeage }}</h1>
+
+    <form action="/update/{{ post.id }}" method="post">
+        <!--
+        <label for="title">タイトル</label><br>
+        <input type="text" name="title" value="" required/><br>
+
+        <label for="date">日付</label><br>
+        <input type="date" name="date" value="" required/><br>
+        
+        <label for="starttime">開始時間　</label>
+        <label for="endtime">終了時間</label><br>
+        <input type="time" name="starttime" value="" required>　</input>
+        <input type="time" name="endtime" value="" required></input><br>
+        
+        <label for="content">内容</label><br>
+        <textarea name="content" cols="40" rows="10"></textarea><br>
+        <p></p>
+        -->
+        
+        <table>
+            <tr>
+                <td><label for="title">タイトル</label></td>
+                <td></td>
+                <td><input type="text" name="title" value="{{ post.title }}" required/></td>
+            </tr>
+            <tr>
+                <td><label for="date">日付</label></td>
+                <td></td>
+                <td><input type="date" name="date" value="{{ post.date }}" required/></td>
+            </tr>
+            <tr>
+                <td><label for="start_time">開始時間</label></td>
+                <td></td>
+                <td><input type="time" name="start_time" value="{{ post.starttime }}" required/></td>
+            </tr>
+            <tr>
+                <td><label for="end_time">終了時間</label></td>
+                <td></td>
+                <td><input type="time" name="end_time" value="{{ post.endtime }}" required/></td>
+            </tr>
+        </table><br>
+
+        <label for="content">内容</label><br>
+        <textarea name="content" cols="40" rows="10">{{ post.content }}</textarea><br>
+        <p></p>
+
+        <p><a href="/show/{{ post.id }}">キャンセル</a> | 
+        <button type="submit">保存</button></p>
+    </form>
+    
+
+{% endblock %}
