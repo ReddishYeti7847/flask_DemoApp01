@@ -1,11 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
     <h1> {{ messeage }} </h1>
-    <form method="POST">
-        <label for="">ユーザ名</label>
-        <input type="text" name="username">
-        <label for="">パスワード</label>
-        <input type="password" name="password">
-        <input type="submit" value="ログイン">
+    
+    <form action="/login" method="post">
+        <label for="user_name">ユーザ名</label>
+        <input type="text" name="user_name" value=""/>
+        
+        <label for="user_password">パスワード</label>
+        <input type="password" name="user_password" value=""/>
+        
+        <button type="submit" value="">ログイン</button>
     </form>
+
 {% endblock %}
