@@ -1,8 +1,5 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>{{ messeage }}</h1>
-    <!-- こんにちは。{{ name }}さん。 -->
-    
     <table>
         <tr>
             <th>タイトル</th>
@@ -24,5 +21,6 @@
         {% endfor %}
     </table>
     
-    <p><a href='/new'> 新規スケジュール </a></p>
+    <p><a href='/new'> 新規スケジュール </a> | 
+    <a href='/logout'> ログアウト </a></p>
 {% endblock %}

@@ -4,8 +4,20 @@
         <title>{{ title }}</title>
     </head>
     <body>
+        <!-- タイトルを表示する -->
+        <h1>{{ title }}</h1>
+        
+        <!-- flashメッセージを表示する -->
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-info" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+        
+        
+        
         {% block content %}
-        <!-- ここにメインコンテンツを書く -->
+            <!-- ここにメインコンテンツを別HTMLで書く -->
         {% endblock %}
     </body>
 </html>
