@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 import os
 from flask import Flask, render_template, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
@@ -7,7 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 #データベース接続など
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(24)   #秘密鍵
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:256UniA:fsP4@localhost/スケジュール"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:Root.123@localhost/スケジュール"
 db = SQLAlchemy(app)
 
 login_manager = LoginManager()
