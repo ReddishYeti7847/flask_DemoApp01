@@ -9,6 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 #データベース接続など
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(24)   #秘密鍵
+#app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:256UniA:fsP4@localhost/スケジュール"
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:Root.123@localhost/スケジュール"
 db = SQLAlchemy(app)
 
@@ -185,4 +186,4 @@ def logout():
 
 ## おまじない
 if __name__ == "__main__":
-    app.run(debug=True, port = 8080)
+    app.run(host='0.0.0.0', port=8080)
